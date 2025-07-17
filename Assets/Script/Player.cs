@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     {
         Andar();
         Pular();
+        Ataque();
     }
 
     private void Andar()
@@ -65,6 +67,14 @@ public class Player : MonoBehaviour
         if (rb.linearVelocity.y < 0)
         {
             animator.SetFloat("ValorPulo", rb.linearVelocity.y);
+        }
+    }
+    private void Ataque()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+           // StartCoroutine("LancarObjeto");
+            animator.SetTrigger("Atacar");
         }
     }
 
@@ -109,6 +119,8 @@ public class Player : MonoBehaviour
         animator.SetBool("EstaVivo", false);
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOver");
     }
 
 }

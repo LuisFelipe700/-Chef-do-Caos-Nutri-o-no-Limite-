@@ -6,12 +6,12 @@ TagManager:
   tags:
   - Ponto
   - Piso
-  - Comida
+  - Trap
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
