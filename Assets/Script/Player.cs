@@ -87,11 +87,11 @@ public class Player : MonoBehaviour
             animator.SetFloat("ValorPulo", 0);
         }
 
-       /* if (collision.gameObject.CompareTag("Trap"))
+        if (collision.gameObject.CompareTag("Trap"))
         {
             animator.SetTrigger("Hit");
             StartCoroutine(Destruir());
-        }*/
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
         SceneManager.LoadScene("GameOver");
-        SceneManager.LoadScene("GameOver");
+        
     }
 
 }
