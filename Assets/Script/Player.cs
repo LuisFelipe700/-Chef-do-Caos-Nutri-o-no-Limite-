@@ -87,11 +87,11 @@ public class Player : MonoBehaviour
             animator.SetFloat("ValorPulo", 0);
         }
 
-        if (collision.gameObject.CompareTag("Trap"))
+       /* if (collision.gameObject.CompareTag("Trap"))
         {
             animator.SetTrigger("Hit");
             StartCoroutine(Destruir());
-        }
+        }*/
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Ponto"))
         {
             other.GetComponent<Animator>().SetTrigger("Sumir");
-            Destroy(other.gameObject, 0.5f);
+            Destroy(other.gameObject, 0.1f);
         }
     }
 
