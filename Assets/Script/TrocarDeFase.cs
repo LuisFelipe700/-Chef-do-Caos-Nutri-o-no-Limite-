@@ -3,7 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class TrocarDeFase : MonoBehaviour
 {
-    [SerializeField] private string nomeDaCena = "Fase2"; // Nome da próxima fase
+    [SerializeField] private string nomeDaCena = "Fase2";
+    // Nome da próxima fase
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,5 +14,6 @@ public class TrocarDeFase : MonoBehaviour
             SceneManager.LoadScene(nomeDaCena);
         }
     }
+       
 }
 
