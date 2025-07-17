@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 37692a34e0e78f74cb538b244c14858b
+guid: c296b443dac95754cb013d3a54ed4785
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5604940512682237986
-    second: adventurer-attack2-00-1.3_0
+      213: -6146499949608002695
+    second: adventurer-knock-dwn-03_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: adventurer-attack2-00-1.3_0
+      name: adventurer-knock-dwn-03_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 4
         y: 0
-        width: 20
-        height: 28
+        width: 26
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edf116acc404732b0800000000000000
-      internalID: -5604940512682237986
+      spriteID: 97b98a38cde33baa0800000000000000
+      internalID: -6146499949608002695
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      adventurer-attack2-00-1.3_0: -5604940512682237986
+      adventurer-knock-dwn-03_0: -6146499949608002695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

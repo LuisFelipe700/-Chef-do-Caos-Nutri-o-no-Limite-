@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 5
-  forcaPulo: 10
+  forcaPulo: 250
   moveH: 0
   noPiso: 1
 --- !u!50 &1568344203674466357
