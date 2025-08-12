@@ -24,9 +24,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Andar();
-        Pular();
+       // Andar();
         Ataque();
+        Pular();
+    }
+
+    private void FixedUpdate()
+    {
+        Andar();
     }
 
     private void Andar()
@@ -84,13 +89,18 @@ public class Player : MonoBehaviour
         {
             noPiso = true;
             animator.SetBool("Piso", true);
-            animator.SetFloat("ValorPulo", 0);
+            
         }
 
         if (collision.gameObject.CompareTag("Trap"))
         {
             animator.SetTrigger("Hit");
             StartCoroutine(Destruir());
+        }
+        if (collision.gameObject.CompareTag("Ponto"))
+        {
+            collision.gameObject.GetComponent<Animator>().SetTrigger("Sumir");
+            Destroy(collision.gameObject, 0.1f);
         }
     }
 
@@ -104,14 +114,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Ponto"))
-        {
-            other.GetComponent<Animator>().SetTrigger("Sumir");
-            Destroy(other.gameObject, 0.1f);
-        }
-    }
+    
 
     IEnumerator Destruir()
     {

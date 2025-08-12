@@ -1,16 +1,18 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections; // Importante para usar corrotinas
 
 public class MensagemPorContato : MonoBehaviour
 {
     [SerializeField] private string textoMensagem = "Você passou de fase!";
-    [SerializeField] private GameObject painelMensagem; // Referência ao painel da UI
-    [SerializeField] private Text textoUI; // Texto onde a mensagem será exibida
+    [SerializeField] private GameObject painelMensagem;
+    [SerializeField] private TextMeshProUGUI textoUI;
 
     private void Start()
     {
         if (painelMensagem != null)
-            painelMensagem.SetActive(false); // Começa invisível
+            painelMensagem.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,7 +23,14 @@ public class MensagemPorContato : MonoBehaviour
             {
                 textoUI.text = textoMensagem;
                 painelMensagem.SetActive(true);
+                StartCoroutine(EsconderMensagemDepoisDeTempo(3f)); // Chama a corrotina
             }
         }
+    }
+
+    private IEnumerator EsconderMensagemDepoisDeTempo(float tempo)
+    {
+        yield return new WaitForSeconds(tempo);
+        painelMensagem.SetActive(false);
     }
 }
