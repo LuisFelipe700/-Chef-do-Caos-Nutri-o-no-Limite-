@@ -7,6 +7,10 @@ TagManager:
   - Ponto
   - Piso
   - Trap
+  - Comida
+  - Direita
+  - Esquerda
+  - Tiro
   layers:
   - Default
   - TransparentFX
