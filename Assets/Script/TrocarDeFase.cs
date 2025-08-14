@@ -4,16 +4,20 @@ using UnityEngine.SceneManagement;
 public class TrocarDeFase : MonoBehaviour
 {
     [SerializeField] private string nomeDaCena = "Fase2";
-    // Nome da próxima fase
 
-
+    // Método chamado quando o jogador encosta no objeto
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // Verifica se foi o personagem que tocou
+        if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(nomeDaCena);
+            TrocarCena();
         }
     }
-       
+
+    // Método público que pode ser chamado por um botão
+    public void TrocarCena()
+    {
+        SceneManager.LoadScene(nomeDaCena);
+    }
 }
 

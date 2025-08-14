@@ -12,14 +12,13 @@ public class Boss : MonoBehaviour
     [SerializeField] private float speed;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    private Audio audioSource;
     [SerializeField] private AudioClip somMorte;
     void Start()
     {
         Patrulha();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<Audio>();
+        
     }
 
     // Update is called once per frame
@@ -56,22 +55,6 @@ public class Boss : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Tiro"))
-        {
-
-            StartCoroutine(Morrer());
-        }
-    }
-
-    IEnumerator Morrer()
-    {
-        animator.SetTrigger("Morrer");
-        //audioSource.TocarSom(somMorte);
-        yield return new WaitForSeconds(1f);
-        Destroy(this.gameObject);
-    }
 }
 
 internal class Audio
